@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: career-core-backend
+  cloud:
+    discovery:
+      enabled: false
+server:
+  shutdown: graceful
+management:
+  health:
+    defaults:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info

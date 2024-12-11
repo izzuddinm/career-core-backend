@@ -1,15 +1,13 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/db_career
-    username: root
-    password: root1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-  sql:
-    init:
-      mode: always
-logging:
-  level:
-    org.hibernate.SQL: debug
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/career_database
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/db_career
+#    username: root
+#    password: root1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+
