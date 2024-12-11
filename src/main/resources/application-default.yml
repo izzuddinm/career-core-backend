@@ -2,6 +2,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/career_database
+api:
+  key: 00481C37F8A34A6593B7203F751183D3
 #  datasource:
 #    url: jdbc:mysql://localhost:3306/db_career
 #    username: root

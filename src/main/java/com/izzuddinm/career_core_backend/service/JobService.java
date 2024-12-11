@@ -13,4 +13,7 @@ public interface JobService {
     ResponseEntity<BaseResponse<Job>> createJob(Locale locale, JobDto job);
     ResponseEntity<BaseResponse<List<Job>>> findAllJob(Locale locale);
     ResponseEntity<BaseResponse<Job>> findJobById(Locale locale, String jobId);
+    ResponseEntity<BaseResponse<Job>> updateJob(Locale locale, JobDto job);
+    ResponseEntity<BaseResponse<Job>> deleteJob(Locale locale, String jobId);
+
 }

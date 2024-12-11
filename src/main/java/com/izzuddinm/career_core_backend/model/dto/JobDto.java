@@ -13,8 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 public class JobDto {
 
-    private String id;
-
     // Basic Job Information
     @NotBlank(message = "Job title cannot be blank")
     @Size(max = 100, message = "Job title must not exceed 100 characters")

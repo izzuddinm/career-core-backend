@@ -54,4 +54,16 @@ public class JobController {
     public ResponseEntity<BaseResponse<Job>> findJobById(Locale locale, @PathVariable String jobId) {
         return jobService.findJobById(locale, jobId);
     }
+
+    /**
+     * Delete of a specific job posting by ID.
+     *
+     * @param locale Locale information.
+     * @param jobId ID of the job.
+     * @return ResponseEntity with job details.
+     */
+    @DeleteMapping("/{jobId}")
+    public ResponseEntity<BaseResponse<Job>> deleteJobById(Locale locale, @PathVariable String jobId) {
+        return jobService.deleteJob(locale, jobId);
+    }
 }

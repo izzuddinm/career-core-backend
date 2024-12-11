@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +17,7 @@ public class Job {
     public static final String COLLECTION = "jobs";
 
     @Id
-    private String id;
+    private String id = "JOB-" + UUID.randomUUID().toString().replaceAll("-", "").toUpperCase();
 
     // Basic Job Information
     private String title;

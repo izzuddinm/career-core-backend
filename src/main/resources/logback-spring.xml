@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+    <springProperty scope="context" name="application.name" source="spring.application.name"/>
+    <property name="BASE_DIR" value="/log"/>
+    <property name="LOG_FILE" value="${BASE_DIR}/${application.name}"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss:SSS z} [%t] %-5level %logger - %m%n"/>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- Minimum logging level to be presented in the console logs-->
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <!-- Appender to log to file -->​
+    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}-%d{yyyyMMdd}.log</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+    <springProfile name="default">
+        <root level="DEBUG">
+            <appender-ref ref="console"/>
+        </root>
+    </springProfile>
+    <springProfile name="development">
+        <root level="DEBUG">
+            <appender-ref ref="console"/>
+            <appender-ref ref="logfile"/>
+        </root>
+    </springProfile>
+    <springProfile name="production">
+        <root level="INFO">
+            <appender-ref ref="console"/>
+            <appender-ref ref="logfile"/>
+        </root>
+    </springProfile>
+</configuration>
