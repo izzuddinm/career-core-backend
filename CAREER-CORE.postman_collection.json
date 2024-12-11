@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "002b8709-0b04-41a8-b0b7-6c4d8b157dd6",
+		"name": "CAREER-CORE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "24153421"
+	},
+	"item": [
+		{
+			"name": "Post Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"job001\",\r\n  \"title\": \"Software Engineer\",\r\n  \"description\": \"Develop and maintain software solutions. Collaborate with cross-functional teams to design and implement new features.\",\r\n  \"jobType\": \"Full-time\",\r\n  \"salary\": 75000.0,\r\n  \"location\": \"San Francisco, CA\",\r\n  \"companyName\": \"TechCorp Inc.\",\r\n  \"companyDescription\": \"A leading tech company specializing in software solutions.\",\r\n  \"companyWebsite\": \"https://www.techcorp.com\",\r\n  \"minimumQualifications\": \"Bachelor's degree in Computer Science or related field. Proficiency in Java and Spring Boot.\",\r\n  \"preferredQualifications\": \"Experience with cloud computing and microservices architecture.\",\r\n  \"responsibilities\": [\r\n    \"Design, develop, and test software applications.\",\r\n    \"Collaborate with product teams to define requirements.\",\r\n    \"Ensure code quality and performance optimization.\"\r\n  ],\r\n  \"benefits\": [\r\n    \"Health insurance\",\r\n    \"401(k) matching\",\r\n    \"Paid time off\"\r\n  ],\r\n  \"applicationDeadline\": \"2024-12-31\",\r\n  \"contactEmail\": \"recruitment@techcorp.com\",\r\n  \"contactPhone\": \"+1234567890\",\r\n  \"createdBy\": \"admin\",\r\n  \"createdDate\": \"2024-11-01\",\r\n  \"updatedDate\": \"2024-11-10\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8080/api/career/jobs"
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/career/jobs"
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Id Job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8080/api/career/jobs/job001"
+			},
+			"response": []
+		}
+	]
+}
